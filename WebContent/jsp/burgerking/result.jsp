@@ -6,8 +6,10 @@
 	String coke = request.getParameter("coke");
 	String chip = request.getParameter("chip");
 	String coffee = request.getParameter("coffee");
-	String menu = request.getParameter("menu");
+	String bagle = request.getParameter("bagle");
+	String salad = request.getParameter("salad");
 	String count = request.getParameter("count");
+	String menu = request.getParameter("menu");
 	String price = "";
 	String total = "";
 	if(count.equals("")){
@@ -39,6 +41,14 @@
 	case "커피":
 		price = coffee;
 		total = Integer.parseInt(coffee)*Integer.parseInt(count)+"";		
+		break;
+	case "베이글":
+		price = bagle;
+		total = Integer.parseInt(bagle)*Integer.parseInt(count)+"";		
+		break;
+	case "샐러드":
+		price = coffee;
+		total = Integer.parseInt(salad)*Integer.parseInt(count)+"";		
 		break;
 	}
 %>
