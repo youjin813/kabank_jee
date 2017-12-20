@@ -1,68 +1,91 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.kabank.jee.domain.BurgerKingBean"%>
+<jsp:useBean id="hamburger" class="com.kabank.jee.domain.BurgerKingBean" scope="request"></jsp:useBean>
+<jsp:useBean id="coke" class="com.kabank.jee.domain.BurgerKingBean" scope="request"></jsp:useBean>
+<jsp:useBean id="chip" class="com.kabank.jee.domain.BurgerKingBean" scope="request"></jsp:useBean>
+<jsp:useBean id="bagle" class="com.kabank.jee.domain.BurgerKingBean" scope="request"></jsp:useBean>
+<jsp:useBean id="salad" class="com.kabank.jee.domain.BurgerKingBean" scope="request"></jsp:useBean>
+<jsp:useBean id="coffee" class="com.kabank.jee.domain.BurgerKingBean" scope="request"></jsp:useBean>
+<!doctype html>
+<html lang="en">
+<%@ include file="../common/head.jsp"%>
+<body>
 <%@ include file="../common/header.jsp"%>
-<%@ include file="../common/navigation.jsp"%>
+<%@ include file="../common/nav.jsp"%>
+<section>
+<article>
 <%
-	String hamburger = request.getParameter("hamburger");
-	String coke = request.getParameter("coke");
-	String chip = request.getParameter("chip");
-	String coffee = request.getParameter("coffee");
-	String bagle = request.getParameter("bagle");
-	String salad = request.getParameter("salad");
-	String count = request.getParameter("count");
-	String menu = request.getParameter("menu");
-	String price = "";
-	String total = "";
-	if(count.equals("")){
-%>		
-<div style="width : 300px; height: 200px; margin: 0 auto;">
+	String hamburgerPrice = request.getParameter("hamburger");
+	String cokePrice = request.getParameter("coke");
+	String chipPrice = request.getParameter("chip");
+	String baglePrice = request.getParameter("bagle");
+	String saladPrice = request.getParameter("salad");
+	String coffeePrice = request.getParameter("coffee");
 	
-	<p>메뉴와 수량을 입력해주세요.</p>
-	<form action="main.jsp">
-		<input type="submit" value="뒤로 가기" />
-	</form>
-</div>
+	String hamburgerCount = request.getParameter("hamburger-count");
+	String cokeCount = request.getParameter("coke-count");
+	String chipCount = request.getParameter("chip-count");
+	String bagleCount = request.getParameter("bagle-count");
+	String saladCount = request.getParameter("salad-count");
+	String coffeeCount = request.getParameter("coffee-count");
+	
+	String place = request.getParameter("place");
+	
+	hamburger.setMenu("햄버거");
+	hamburger.setPrice(hamburgerPrice);
+	hamburger.setCount(hamburgerCount);
 
-<% 		
-	}else{
+	chip.setMenu("감자튀김");
+	chip.setPrice(chipPrice);
+	chip.setCount(chipCount);
 	
-	switch(menu){
-	case "햄버거":
-		price = hamburger;
-		total = Integer.parseInt(hamburger)*Integer.parseInt(count)+"";
-		break;
-	case "콜라":
-		price = coke;
-		total = Integer.parseInt(coke)*Integer.parseInt(count)+"";		
-		break;
-	case "감자칩":
-		price = chip;
-		total = Integer.parseInt(chip)*Integer.parseInt(count)+"";		
-		break;
-	case "커피":
-		price = coffee;
-		total = Integer.parseInt(coffee)*Integer.parseInt(count)+"";		
-		break;
-	case "베이글":
-		price = bagle;
-		total = Integer.parseInt(bagle)*Integer.parseInt(count)+"";		
-		break;
-	case "샐러드":
-		price = coffee;
-		total = Integer.parseInt(salad)*Integer.parseInt(count)+"";		
-		break;
-	}
+	coke.setMenu("콜라");
+	coke.setPrice(cokePrice);
+	coke.setCount(cokeCount);
+	
+	bagle.setMenu("베이글");
+	bagle.setPrice(baglePrice);
+	bagle.setCount(bagleCount);
+	
+	salad.setMenu("샐러드");
+	salad.setPrice(saladPrice);
+	salad.setCount(saladCount);
+	
+	coffee.setMenu("커피");
+	coffee.setPrice(coffeePrice);
+	coffee.setCount(coffeeCount);
+	
+	List<BurgerKingBean> list = new ArrayList<>();
+	list.add(hamburger);
+	list.add(chip);
+	list.add(coke);
+	list.add(salad);
+	list.add(coffee);
+	list.add(bagle);
 %>
-<div style="width : 300px; height: 200px; margin: 0 auto;">
-	<p>
-		<%= menu %> <%= count %> <%= price %> <br />
- 		---------------------------- <br />
- 		결제금액 <%= total %>
-	</p>
-	<form action="">
-		<input type="submit" value="결제" />
-	</form>
-</div>
-<% 
-	}
-%>
+	<div style="width: 500px; margin: 0 auto;">
+	<%=place %> <br />
+	
+	------------------------------------------------------------- <br />
+<% 	
+	int pay = 0;
+	for(BurgerKingBean b : list){
+		if(!b.getCount().equals("")){
+%>  
+		주문한 품목<%=b%> <br />
+<%
+	pay += Integer.parseInt(b.getCount())*Integer.parseInt(b.getPrice());
+	 }
+		}
+%>		
+	-------------------------------------------------------------- <br />
+	
+	결제 금액 ￦<%=pay %>
+	</div>
+</article>
+</section>
+<aside></aside>	
 <%@ include file="../common/footer.jsp"%>
+ </body>
+</html>
