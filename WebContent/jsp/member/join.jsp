@@ -3,6 +3,8 @@
 <html lang="en">
 <%@ include file="../common/head.jsp"%>
 <head>
+	<link rel="stylesheet" href="../css/index.css" />
+	<link rel="stylesheet" href="../css/member.css" />
 	<meta charset="UTF-8" />
 	<title>Document</title>
 </head>
@@ -12,53 +14,92 @@
  <header>
  <h1>회원 가입</h1>
  </header>
+ <section>
  <article>
- <form action="">
+ <form name="join_form" action="../index.jsp">
 	<table>
-		<tr>
-			<td>
-				<input type="text" name="join" placeholder="ID"/>
+		<tr>	
+			<td>아이디</td>
+			<td >
+				<input id="join_id" type="text"/>
+				<button id="check_dupl_btn" name="check_dupl_btn">중복 확인</button>
 			</td>
 		</tr>
 		<tr>
+			<td >비밀번호</td>
 			<td>
-				<input type="text" name="join" placeholder="PASS"/>
+				<input type="text" />
 			</td>
 		</tr>
 		<tr>
+			<td>비밀번호 확인</td>
 			<td>
-				<input type="text" name="join" placeholder="NAME"/>
+				<input type="text"/>
+					<button style="width: 160px; height: 30px">확인</button>
 			</td>
 		</tr>
 		<tr>
+			<td>이름</td>			
 			<td>
-				<input type="text" name="join" placeholder="ID"/>
+				<input type="text" />
 			</td>
 		</tr>
 		<tr>
+		<td>가입일</td>
+		<td><input type="date"/></td>
+		</tr>
+		<tr>
+			<td>주민번호</td>
 			<td>
-				<input type="text" name="join" placeholder="PHONE NUMBER"/>
+				<input type="text" />
 			</td>
 		</tr>
 		<tr>
+			<td>핸드폰번호</td>
 			<td>
-				<input type="text" name="join" placeholder="E-MAIL" />
+				<input type="tel"  />
+				<input type="radio"value="KT" />KT
+				<input type="radio"value="SKT"/>SKT
+				<input type="radio"value="LG"/>LG
+				<br />
+				<select>
+				<option>010</option>
+				</select>
+				<input pattern="[0-9]{4}" type="text" />
+				<input pattern="[0-9]{4}" type="text" />
 			</td>
 		</tr>
 		<tr>
+			<td>이메일</td>
 			<td>
-				<input type="text" name="join" placeholder="ADERESS"/>
+				<input type="email" />@<select name="" id=""></select>
 			</td>
 		</tr>
 		<tr>
+			<td>주소</td>
 			<td>
-				<input type="text" name="join" placeholder="PROFILE"/>
+				<input type="text" />
+					<button style="width: 160px; height: 30px">주소 검색</button>
+			</td>
+		</tr>
+		<tr>
+			<td>프로필사진</td>
+			<td>
+				<input type="text"/>
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<button id="join_confirm_btn" style="width: 160px; height: 30px">확인</button>
+			<button style="width: 160px; height: 30px">취소</button>
 			</td>
 		</tr>
 	</table>
-	</form>
+</form>
 </article>	
+</section>
 <%@ include file="../common/footer.jsp"%>
+<script src="../../js/join.js"></script>
 </body>
 </html>
-

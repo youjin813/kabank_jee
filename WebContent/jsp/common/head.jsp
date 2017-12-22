@@ -2,7 +2,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Index</title>
-	<link rel="shortcut icon" href="../img/favion.ico" />
+	<link rel="shortcut icon" href="../../img/favicon.ico" />
 	<link rel="stylesheet" href="../../css/common.css" />
 	<link rel="stylesheet" href="../../css/burgerking.css" />
 	<link rel="stylesheet" href="../../css/bitcamp.css" />

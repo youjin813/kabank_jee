@@ -6,6 +6,8 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="../css/common.css" />
 	<link rel="stylesheet" href="../css/index.css" />
+	<link rel="shortcut icon"  href="../img/favicon.ico" />
+	<script src="../js/index.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -20,26 +22,27 @@
 	  			<form action="burgerking/main.jsp">
 	  				<table id="index_login_box">
 	  				<tr>
-	  					<td id="index_input_id">
-							<input type="text" placeholder="ID"/>						  					
+	  					<td >
+							<input id="index_input_id" type="text" placeholder="ID"/>						  					
 	  					</td>
 	  					<td rowspan="2">
-	  						<input type="submit" value="로그인" id="index_input_pass" />
+	  						<button id="index_login_btn">로그인</button>
 	  						
 	  					</td>
 	  				</tr>
 	  				<tr>
 	  					<td>
-	  						<input type="text" placeholder="PASSWORD" />
+	  						<input id="index_input_pass" type="text" placeholder="PASSWORD" />
 	  					</td>
 	  				</tr>
 	  			 </table>	
 			</form>
-			<a href=""></a>
+			<a id="go_admin_link" >관리자</a>
+			<a id="go_join_link">회원가입</a>
 </table>
 </article>
-	  	</section>
-<%@ include file="./common/footer.jsp"%>
+</section>
 </div>
+<%@ include file="common/footer.jsp"%>
 </body>
 </html>
