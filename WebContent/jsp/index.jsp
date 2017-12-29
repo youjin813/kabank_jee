@@ -44,5 +44,6 @@
 </section>
 </div>
 <%@ include file="common/footer.jsp"%>
+<script src="../../js/index.js"></script>
 </body>
 </html>

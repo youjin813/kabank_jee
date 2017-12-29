@@ -17,10 +17,9 @@ function indexLogin(e){
 	alert('회원가입한 아이디'+ id);
 }
 function goAdmin(){
-	var admin = confirm('관리자?');
-	if(admin){
+	if(confirm('관리자?')){
 		alert('안녕하세요 관리자님');
-		location.href="burgerking/main.jsp";
+		location.href="admin/main.jsp";
 	}else{
 		alert('관리자만 접근 가능합니다.');
 	}

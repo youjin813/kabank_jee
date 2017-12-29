@@ -16,19 +16,19 @@
  </header>
  <section>
  <article>
- <form name="join_form" action="../index.jsp">
+ <form name="join_form" action="join.jsp">
 	<table>
 		<tr>	
 			<td>아이디</td>
 			<td >
-				<input id="join_id" type="text"/>
+				<input name="id" id="join_id" type="text"/>
 				<button id="check_dupl_btn" name="check_dupl_btn">중복 확인</button>
 			</td>
 		</tr>
 		<tr>
 			<td >비밀번호</td>
 			<td>
-				<input type="text" />
+				<input name="pass" type="text" />
 			</td>
 		</tr>
 		<tr>
@@ -41,7 +41,7 @@
 		<tr>
 			<td>이름</td>			
 			<td>
-				<input type="text" />
+				<input name="name" type="text" />
 			</td>
 		</tr>
 		<tr>
@@ -51,13 +51,13 @@
 		<tr>
 			<td>주민번호</td>
 			<td>
-				<input type="text" />
+				<input name="ssn" type="text" />
 			</td>
 		</tr>
 		<tr>
 			<td>핸드폰번호</td>
 			<td>
-				<input type="tel"  />
+				<input name="phone" type="tel"  />
 				<input type="radio"value="KT" />KT
 				<input type="radio"value="SKT"/>SKT
 				<input type="radio"value="LG"/>LG
@@ -78,14 +78,14 @@
 		<tr>
 			<td>주소</td>
 			<td>
-				<input type="text" />
+				<input name="addr" type="text" />
 					<button style="width: 160px; height: 30px">주소 검색</button>
 			</td>
 		</tr>
 		<tr>
 			<td>프로필사진</td>
 			<td>
-				<input type="text"/>
+				<input name="profile" type="text"/>
 				
 			</td>
 		</tr>
@@ -100,6 +100,6 @@
 </article>	
 </section>
 <%@ include file="../common/footer.jsp"%>
-<script src="../../js/join.js"></script>
+<script src="../../js/join_form.js"></script>
 </body>
 </html>

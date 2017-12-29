@@ -12,5 +12,6 @@ function joinconfirm(e) {
 	var joinId = document.querySelector('#join_id').value;
 	alert('가입 확인 클릭'+joinId);
 	sessionStorage.setItem('id',joinId);
+	document.querySelector('#join_form').submit();
 }
 window.addEventListener("load",init,false);

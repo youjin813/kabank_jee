@@ -14,5 +14,9 @@ function init() {
 			function(e) {
 				location.href = "../index.jsp";
 			},false);
-}
+	document.querySelector('#attend_result').addEventListener('click',bitcampResult,false);
+		}
+	function bitcampResult(){
+		location.href = "result.jsp";
+	}
 window.addEventListener("load",init,false);
