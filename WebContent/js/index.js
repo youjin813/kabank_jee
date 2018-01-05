@@ -11,7 +11,7 @@ function indexLogin(e){
 	var loginId = document.querySelector('#index_input_id').value;
 	var joinId = sessionStorage.getItem('id');
 	if(!(loginId === joinId)){
-		e.preventDefault();
+		
 		alert('입력하신'+loginId+'는 틀립니다.');
 	}
 	alert('회원가입한 아이디'+ id);

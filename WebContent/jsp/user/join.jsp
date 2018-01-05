@@ -11,12 +11,12 @@ try{
 	conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","bitcamp","bitcamp");
 	stmt = conn.createStatement();
 	member.setId(request.getParameter("id"));
-	member.setPass(request.getParameter("id"));
-	member.setName(request.getParameter("id"));
-	member.setSsn(request.getParameter("id"));
-	member.setPhone(request.getParameter("id"));
-	member.setProfile(request.getParameter("id"));
-	member.setAddr(request.getParameter("id"));
+	member.setPass(request.getParameter("pass"));
+	member.setName(request.getParameter("name"));
+	member.setSsn(request.getParameter("ssn"));
+	member.setPhone(request.getParameter("phone"));
+	member.setProfile(request.getParameter("profile"));
+	member.setAddr(request.getParameter("addr"));
 	String sql = String.format("INSERT INTO Member("
 			+"id ,"
 			+"pass ,"

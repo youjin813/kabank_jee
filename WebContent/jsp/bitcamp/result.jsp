@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
 <%@page import="java.util.*" %>
 <%@page import="com.kabank.jee.domain.AttendBean" %>
@@ -9,8 +9,8 @@ ResultSet rs = null;
 String sql = "";
 List<AttendBean> result = new ArrayList<>();
 	try{
-		Class.forName("Oracle.jdbc.driver.OracleDriver");
-		conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe");
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","bitcamp","bitcamp");
 		stmt = conn.createStatement();
 		sql = "SELECT * FROM tab";
 		rs = stmt.executeQuery(sql);
@@ -32,7 +32,7 @@ List<AttendBean> result = new ArrayList<>();
 				+"week VARCHAR2(20),"
 				+"status VARCHAR2(20)"
 				+")";
-		stmt.executeUpdate(sql);
+		stmt.executeQuery(sql);
 		}else{
 			rs = stmt.executeQuery("SELECT id, week, status");
 			AttendBean a = new AttendBean();
@@ -61,4 +61,4 @@ List<AttendBean> result = new ArrayList<>();
 <%
 System.out.print("=======찍고옴=======");
 //pageContext.forward("main.jsp");
-%>s
+%>
